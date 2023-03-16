@@ -75,3 +75,17 @@ section{
     left: 70px;
     margin: 0;
 }
+
+button{
+    font-size: 20px;
+    background-color: black;
+    color: brown;
+    position: absolute;
+    top: 20;
+
+}
+.chef{
+    display:block;
+    margin: auto;
+    width: 500px;
+}
