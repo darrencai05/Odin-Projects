@@ -1,0 +1,88 @@
+body {
+    background: black;
+    margin: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+
+header{
+    height: 90px;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+   
+}
+
+h1, h2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+.images{
+    display:flex;
+    justify-content: center;
+   
+}
+
+.person{
+    height: 200px;
+    width: auto;
+    margin-right: 90px;
+}
+.robot{
+    height: 200px;
+    width: 160px;
+    margin-right: 100px;
+}
+
+.points{
+    color:white;
+    
+}
+.count{
+    display:flex;
+    justify-content: center;
+    gap: 250px;
+}
+.choices{
+    height: auto;
+    display:flex;
+    justify-content: center;
+    gap: 100px;
+}
+.choices button{
+    background: gray;
+    font-size: 100px;
+}
+.message{
+    margin-top: 20px;
+    font-size: 40px;
+    color:white;
+    display:flex;
+    justify-content: center;
+
+}
+.end-message{
+    display: flex;
+    color: red;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.butt{
+    
+    display:flex;
+    justify-content: center;
+}
+
+.show{
+    display: none;
+}
+
+.playagain{
+    height: 50px;
+    width: 50px;
+}
