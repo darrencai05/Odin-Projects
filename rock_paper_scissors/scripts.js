@@ -1,21 +1,21 @@
 
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
+const select = document.querySelectorAll(".select")
 const output = document.querySelector(".message")
 const amount = window.prompt("How many points do you want to play to ?");
 const title = document.querySelector("h2");
-title.innerHTML = ("Score " + amount + " points to win the game");
+title.innerText = ("Score " + amount + " points to win the game");
 const end_message = document.querySelector(".end-message");
 const hide= document.querySelector(".hide-container")
 const show = document.querySelector(".show")
 const restart = document.querySelector(".playagain")
 
+let audio = document.querySelector('#sound')
 let player_points = document.querySelector(".player-points");
 let computer_points = document.querySelector(".robot-points");
 let playerPoints = 0;
 let computerPoints = 0;
 let result = ""
+let f = document.querySelector("header")
 
 const arr = ["ROCK", "PAPER", "SCISSORS"]
 function computerChoice() {
@@ -30,18 +30,20 @@ function playAgain() {
 
 
 function end() {
+    
     console.log("made it")
    if (playerPoints>computerPoints) {
-    end_message.innerHTML = ("YOU WIN " + playerPoints + " - " + computerPoints)
+    end_message.innerText = ("YOU WIN " + playerPoints + " - " + computerPoints)
    }
    else{
-    end_message.innerHTML = ("YOU LOSE " + playerPoints + " - " + computerPoints)
+    end_message.innerText = ("YOU LOSE " + playerPoints + " - " + computerPoints)
    }
    playAgain()
 }
 
 function game() {
-    
+    f.style.background = 'green';
+    audio.play();
     let input= this.value;
     let computer = computerChoice();
     
@@ -50,55 +52,56 @@ function game() {
         
         if (computer == "PAPER") {
         computerPoints +=1;
-        computer_points.innerHTML = ("Computer: " + computerPoints);
+        computer_points.innerText = ("Computer: " + computerPoints);
         }
         else if (computer == "ROCK"){
         }
         else{
-            player_points.innerHTML = ("Player: " + playerPoints);
+            player_points.innerText = ("Player: " + playerPoints);
        
         }
      }
      if (input =="PAPER"){
         if (computer == "SCISSORS") {
         computerPoints +=1;
-        computer_points.innerHTML = ("Computer: " + computerPoints);
+        computer_points.innerText = ("Computer: " + computerPoints);
         }
         else if (computer == "PAPER"){ 
         }
         else{
             playerPoints +=1;
-            player_points.innerHTML = ("Player: " + playerPoints) ;        
+            player_points.innerText = ("Player: " + playerPoints) ;        
         }
      }
      if (input =="SCISSORS"){
         if (computer == "ROCK") {
         computerPoints +=1;
-        computer_points.innerHTML = ("Computer: " + computerPoints);
+        computer_points.innerText = ("Computer: " + computerPoints);
         }
         else if (computer == "SCISSORS"){
           
         }
         else{
             playerPoints +=1;
-            player_points.innerHTML = ("Player: " + playerPoints);
+            player_points.innerText = ("Player: " + playerPoints);
           
         }
      }
      if (playerPoints == amount || computerPoints == amount) {
         end();
     }
-     output.innerHTML= ("Computer Choice: " + computer);
+     output.innerText= ("Computer Choice: " + computer);
      
  }
  
 
 
+select.forEach((selection) => {
+    selection.addEventListener('click', game)
+})
 
-rock.addEventListener("click", game);
-paper.addEventListener("click", game);
-scissors.addEventListener("click", game);
 restart.addEventListener('click', function(){
+
     window.location.reload();
 })
 
