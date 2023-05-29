@@ -74,12 +74,13 @@ function buttonColors(){
 inputvalue.addEventListener('change', createGrid)
 color_wheel.addEventListener('input',function(){
     chosenColor = this.value;
+})
+
 color_mode.addEventListener('click', function(){
     userChoice = 'colormode'
     buttonColors();
     color_mode.style.background = "#303030"
-})
-} )
+}) 
 
 rainbow.addEventListener('click', function(){
     userChoice = 'rainbow'
