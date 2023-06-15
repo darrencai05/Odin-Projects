@@ -1,0 +1,177 @@
+body{
+    height: 100vh;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #2d4059;;
+    display:flex;
+    flex-direction: column;
+    
+}
+
+:root{
+    --blue: #2185d5;
+}
+
+.popup{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+.form-container{
+    position: absolute;
+    border-radius: 9px;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    border-radius: 8px;
+    background: white;
+    min-height: 60%;
+    min-width: 20%;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+  
+}
+
+.form-header{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr 1fr;
+    grid-template-areas: 
+        'title close'
+    ;
+    color: var(--blue);
+    font-weight: 400;
+}
+
+.newbook{
+    grid-area: title;
+    justify-self: center;
+    padding-top: 10px;
+    font-size: 3rem;
+    
+}
+.close{
+    grid-area: close;
+    justify-self: start;
+    border: none;
+    color: var(--blue);
+    font-size: 2em;
+    background-color: white;
+    padding-right: 10px;
+}
+
+.inputs > div{
+    display:flex;
+    flex-direction: column;    
+}
+
+.inputs{
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+input, select, .submit{
+    background: #f7f7f7;
+    border-radius: 3px;
+    min-height: 50px;
+    border: none;
+}
+
+label{
+    font-weight: 200;
+    font-size: 1.3rem;
+    color: black;
+}
+
+.submit{
+    color:white;
+    background: var(--blue);
+    font-size: 2rem; 
+}
+
+header{
+    background: var(--blue);
+    min-height: 70px;
+    font-size: 2rem;
+    color:white;
+    font-weight: 200;
+    text-align: center; 
+    padding-top: 20px;
+}
+.card-container{
+    flex: 1;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 250px;
+    width:80%;
+    align-self: center;
+    /*border: 1px solid red;*/
+    gap: 20px;
+
+}
+
+.add{
+    position: fixed;
+    min-height: 50px;
+    min-width: 50px;
+    background: var(--blue);
+    border-radius: 50%;
+    border: none;
+    align-self: flex-end;
+    color:white;
+    font-size: 1.6rem;
+    top: 90%;
+    left: 95%;
+}
+
+.card{
+    background: white;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.card-title, .card-author, .card-pages, .read-status{
+    border-bottom: 1px solid gray;
+    font-size: 1.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.card-title{
+    padding-top: 10px;
+    background: var(--blue);
+   
+ 
+}
+
+.updates{
+    display:flex;
+    height: 100%;
+}
+.update, .delete{
+    flex:1;
+    border: none;
+}
+
+.update{
+    background: rgb(35, 255, 171);
+}
+
+.delete{
+    background: var(--blue)
+}
